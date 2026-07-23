@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Import Members | WACF Attendance System</title>
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+
+<body>
+
+
+<div id="overlay" class="overlay hidden"></div>
+
+
+
+<!-- =========================
+SIDEBAR
+========================= -->
+
+
+<aside id="sidebar" class="sidebar">
+
+
+<div class="logo">
+
+
+<img src="assets/logo.jpg">
+
+
+<h2>
+WORD ASSEMBLY
+</h2>
+
+
+<p>
+Campus Fellowship
+</p>
+
+
+</div>
+
+
+
+<nav>
+
+
+<a href="dashboard.html" class="menu">
+
+<i class="fas fa-house"></i>
+
+Dashboard
+
+</a>
+
+
+
+<a href="attendance.html" class="menu">
+
+<i class="fas fa-calendar-check"></i>
+
+Attendance
+
+</a>
+
+
+
+<a href="members.html" class="menu">
+
+<i class="fas fa-users"></i>
+
+Members
+
+</a>
+
+
+
+
+<a href="import.html" class="menu active">
+
+<i class="fas fa-file-excel"></i>
+
+Import Excel
+
+</a>
+
+
+
+
+<a href="reports.html" class="menu">
+
+<i class="fas fa-chart-column"></i>
+
+Reports
+
+</a>
+
+
+
+
+<a href="birthdays.html" class="menu">
+
+<i class="fas fa-cake-candles"></i>
+
+Birthdays
+
+</a>
+
+
+
+
+<a href="settings.html" class="menu">
+
+<i class="fas fa-gear"></i>
+
+Settings
+
+</a>
+
+
+
+
+<a href="index.html" id="logoutBtn" class="menu">
+
+<i class="fas fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+
+
+</nav>
+
+
+
+</aside>
+
+
+
+
+
+<!-- =========================
+MAIN
+========================= -->
+
+
+<div class="main">
+
+
+<header class="header">
+
+
+<div class="header-left">
+
+
+<button id="menuBtn" class="menu-btn">
+
+<i class="fas fa-bars"></i>
+
+</button>
+
+
+
+<h2>
+Import Members
+</h2>
+
+
+
+</div>
+
+
+
+
+<div class="header-right">
+
+
+<i class="fas fa-file-import"
+style="
+font-size:22px;
+color:#b91c1c;
+">
+</i>
+
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+<div class="content">
+
+
+
+
+
+<!-- =========================
+UPLOAD CARD
+========================= -->
+
+
+<div class="card">
+
+
+<h2 class="mb-5 text-xl font-bold">
+
+Upload Excel File
+
+</h2>
+
+
+
+<p class="mb-4 text-gray-500">
+
+Excel format:
+
+<strong>
+full_name, birth_day, birth_month, address, department, level, phone1, phone2
+</strong>
+
+</p>
+
+
+
+<input
+
+type="file"
+
+id="excelFile"
+
+accept=".xlsx,.xls"
+
+class="input"
+
+
+
+>
+
+
+
+<button
+
+id="uploadBtn"
+
+class="btn btn-red mt-5"
+
+>
+
+
+<i class="fas fa-upload"></i>
+
+Upload & Preview
+
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =========================
+PREVIEW
+========================= -->
+
+
+<div
+
+id="previewBox"
+
+class="card hidden mt-6"
+
+>
+
+
+
+<h2 class="text-xl font-bold mb-5">
+
+Preview Members
+
+</h2>
+
+
+
+
+
+<div class="table-container">
+
+
+<table>
+
+
+
+<thead>
+
+
+<tr>
+
+
+<th>
+Name
+</th>
+
+
+<th>
+Phone 1
+</th>
+
+
+<th>
+Department
+</th>
+
+
+<th>
+Level
+</th>
+
+
+
+</tr>
+
+
+
+</thead>
+
+
+
+
+<tbody id="previewTable">
+
+
+</tbody>
+
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+<button
+
+id="saveImport"
+
+class="btn btn-green mt-5"
+
+>
+
+
+<i class="fas fa-database"></i>
+
+
+Save Members
+
+
+
+</button>
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =========================
+SCRIPTS
+========================= -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+</script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js">
+</script>
+
+
+
+<script src="js/config.js">
+</script>
+
+
+<script src="js/auth.js">
+</script>
+
+
+<script src="js/sidebar.js">
+</script>
+
+
+<script src="js/app.js">
+</script>
+
+
+<script src="js/import.js">
+</script>
+
+
+
+</body>
+
+
+</html>

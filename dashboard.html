@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | WACF Attendance System</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- MOBILE OVERLAY -->
+<div id="overlay" class="overlay hidden"></div>
+
+
+
+<!-- SIDEBAR -->
+
+<aside id="sidebar" class="sidebar">
+
+
+<div class="logo">
+
+<img src="assets/logo.jpg">
+
+<h2>
+WORD ASSEMBLY
+</h2>
+
+<p>
+Campus Fellowship
+</p>
+
+</div>
+
+
+
+<nav>
+
+
+<a href="dashboard.html" class="menu active">
+
+<i class="fas fa-house"></i>
+
+Dashboard
+
+</a>
+
+
+
+<a href="attendance.html" class="menu">
+
+<i class="fas fa-calendar-check"></i>
+
+Attendance
+
+</a>
+
+
+
+
+<a href="members.html" class="menu">
+
+<i class="fas fa-users"></i>
+
+Members
+
+</a>
+
+
+
+
+
+<a href="import.html" class="menu">
+
+<i class="fas fa-file-excel"></i>
+
+Import Excel
+
+</a>
+
+
+
+
+
+<a href="reports.html" class="menu">
+
+<i class="fas fa-chart-column"></i>
+
+Reports
+
+</a>
+
+
+
+
+
+<a href="birthdays.html" class="menu">
+
+<i class="fas fa-cake-candles"></i>
+
+Birthdays
+
+</a>
+
+
+
+
+
+<a href="settings.html" class="menu">
+
+<i class="fas fa-gear"></i>
+
+Settings
+
+</a>
+
+
+
+
+
+<a href="index.html" id="logoutBtn" class="menu">
+
+<i class="fas fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+
+
+</nav>
+
+
+</aside>
+
+
+
+
+
+<!-- MAIN -->
+
+
+<div class="main">
+
+
+
+<header class="header">
+
+
+<div class="header-left">
+
+
+<button id="menuBtn" class="menu-btn">
+
+<i class="fas fa-bars"></i>
+
+</button>
+
+
+
+<h2>
+Dashboard
+</h2>
+
+
+</div>
+
+
+
+
+
+<div class="header-right">
+
+
+<button style="position:relative;background:none;border:none;">
+
+
+<i class="far fa-bell"
+style="font-size:22px;">
+</i>
+
+
+
+<span id="birthdayBadge"
+
+style="
+position:absolute;
+top:-8px;
+right:-8px;
+background:#dc2626;
+color:white;
+border-radius:50%;
+width:18px;
+height:18px;
+font-size:11px;
+display:flex;
+align-items:center;
+justify-content:center;
+">
+
+0
+
+</span>
+
+
+</button>
+
+
+
+
+<div>
+
+<strong>
+Administrator
+</strong>
+
+<br>
+
+<small>
+Super Admin
+</small>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+<div class="content">
+
+
+
+
+
+<!-- STATISTICS -->
+
+
+<div class="grid-4">
+
+
+
+<div class="card">
+
+<div class="card-title">
+
+Total Members
+
+</div>
+
+
+<div id="totalMembers"
+class="card-value">
+
+0
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<div class="card-title">
+
+Present Today
+
+</div>
+
+
+<div id="presentToday"
+class="card-value">
+
+0
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<div class="card-title">
+
+Absent Today
+
+</div>
+
+
+<div id="absentToday"
+class="card-value">
+
+0
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<div class="card-title">
+
+Today's Birthdays
+
+</div>
+
+
+<div id="birthdayToday"
+class="card-value">
+
+0
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+<!-- QUICK ACTIONS -->
+
+
+<div class="grid-4">
+
+
+<a href="attendance.html"
+class="card"
+style="
+text-decoration:none;
+color:inherit;
+text-align:center;
+">
+
+
+<i class="fas fa-calendar-check fa-2x"></i>
+
+
+<h3>
+Attendance
+</h3>
+
+
+</a>
+
+
+
+
+
+
+<a href="members.html"
+
+class="card"
+
+style="
+text-decoration:none;
+color:inherit;
+text-align:center;
+">
+
+<i class="fas fa-user-plus fa-2x"></i>
+
+
+<h3>
+Register Member
+</h3>
+
+
+</a>
+
+
+
+
+
+
+
+
+<a href="import.html"
+
+class="card"
+
+style="
+text-decoration:none;
+color:inherit;
+text-align:center;
+">
+
+<i class="fas fa-file-import fa-2x"></i>
+
+
+<h3>
+Import
+</h3>
+
+
+</a>
+
+
+
+
+
+
+
+<a href="reports.html"
+
+class="card"
+
+style="
+text-decoration:none;
+color:inherit;
+text-align:center;
+">
+
+<i class="fas fa-chart-column fa-2x"></i>
+
+
+<h3>
+Reports
+</h3>
+
+
+</a>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<!-- BIRTHDAY LIST -->
+
+
+<div class="card">
+
+
+<h3>
+
+Today's Birthdays
+
+</h3>
+
+
+
+<div id="birthdayList">
+
+
+<div class="text-gray-500">
+
+No birthdays today.
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<!-- RECENT MEMBERS -->
+
+
+<div class="card">
+
+
+<h3>
+
+Recently Registered Members
+
+</h3>
+
+
+
+
+<div class="table-container">
+
+
+<table>
+
+
+<thead>
+
+
+<tr>
+
+
+<th>
+Member No
+</th>
+
+
+<th>
+Name
+</th>
+
+
+<th>
+Department
+</th>
+
+
+<th>
+Level
+</th>
+
+
+<th>
+Phone
+</th>
+
+
+
+</tr>
+
+
+</thead>
+
+
+
+
+
+<tbody id="memberTable">
+
+
+<tr>
+
+<td colspan="5"
+style="text-align:center;">
+
+No members available.
+
+</td>
+
+
+</tr>
+
+
+</tbody>
+
+
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script src="js/config.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/sidebar.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | WACF Attendance System</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#b91c1c",
+                        secondary: "#facc15"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #991b1b, #ef4444);
+        }
+
+        .glass {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, .95);
+        }
+    </style>
+
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-6xl grid lg:grid-cols-2 bg-white rounded-3xl overflow-hidden shadow-2xl">
+
+        <!-- Left -->
+
+        <div class="hidden lg:flex flex-col justify-center items-center bg-primary text-white p-16">
+
+            <img src="assets/logo.jpg" class="w-40 h-40 rounded-full object-cover shadow-lg">
+
+            <h1 class="text-4xl font-bold mt-8 text-center">
+
+                WORD ASSEMBLY
+
+            </h1>
+
+            <p class="text-yellow-300 text-xl mt-2">
+
+                CAMPUS FELLOWSHIP
+
+            </p>
+
+            <p class="text-center mt-10 leading-8 opacity-90">
+
+                Church Attendance &
+                Membership Management System
+
+            </p>
+
+        </div>
+
+        <!-- Right -->
+
+        <div class="glass p-8 sm:p-12 flex flex-col justify-center">
+
+            <div class="lg:hidden flex justify-center mb-8">
+
+                <img src="assets/logo.jpg"
+                    class="w-28 h-28 rounded-full object-cover shadow-lg">
+
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-800">
+
+                Welcome Back
+
+            </h2>
+
+            <p class="text-gray-500 mt-2">
+
+                Login to continue
+
+            </p>
+
+            <form id="loginForm" class="mt-10 space-y-6">
+
+                <div>
+
+                    <label class="font-medium">
+
+                        Email
+
+                    </label>
+
+                    <div class="relative mt-2">
+
+                        <i
+                            class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+
+                        <input
+                            id="email"
+                            type="email"
+                            placeholder="Enter email"
+                            class="w-full border rounded-xl pl-12 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary">
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <label class="font-medium">
+
+                        Password
+
+                    </label>
+
+                    <div class="relative mt-2">
+
+                        <i
+                            class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+
+                        <input
+                            id="password"
+                            type="password"
+                            placeholder="Enter password"
+                            class="w-full border rounded-xl pl-12 pr-12 py-3 focus:outline-none focus:ring-2 focus:ring-secondary">
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="absolute right-4 top-1/2 -translate-y-1/2">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <button
+                    id="loginBtn"
+                    class="w-full bg-primary hover:bg-red-800 text-white py-3 rounded-xl font-semibold transition">
+
+                    <i class="fa-solid fa-right-to-bracket mr-2"></i>
+
+                    Login
+
+                </button>
+
+                <div
+                    id="message"
+                    class="text-center text-red-600 text-sm"></div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const password = document.getElementById("password");
+
+        const toggle = document.getElementById("togglePassword");
+
+        toggle.addEventListener("click", () => {
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                toggle.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+
+            } else {
+
+                password.type = "password";
+
+                toggle.innerHTML = '<i class="fa-solid fa-eye"></i>';
+
+            }
+
+        });
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+
+<script src="js/login.js"></script>
+
+</body>
+
+</html>

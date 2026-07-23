@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthdays | WACF Attendance System</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div id="overlay" class="overlay hidden"></div>
+
+<!-- SIDEBAR -->
+<aside id="sidebar" class="sidebar">
+
+<div class="logo">
+
+<img src="assets/logo.jpg">
+
+<h2>WORD ASSEMBLY</h2>
+
+<p>Campus Fellowship</p>
+
+</div>
+
+<nav>
+
+<a href="dashboard.html" class="menu">
+<i class="fas fa-house"></i>
+Dashboard
+</a>
+
+<a href="attendance.html" class="menu">
+<i class="fas fa-calendar-check"></i>
+Attendance
+</a>
+
+<a href="members.html" class="menu">
+<i class="fas fa-users"></i>
+Members
+</a>
+
+<a href="import.html" class="menu">
+<i class="fas fa-file-excel"></i>
+Import Excel
+</a>
+
+<a href="reports.html" class="menu">
+<i class="fas fa-chart-column"></i>
+Reports
+</a>
+
+<a href="birthdays.html" class="menu active">
+<i class="fas fa-cake-candles"></i>
+Birthdays
+</a>
+
+<a href="settings.html" class="menu">
+<i class="fas fa-gear"></i>
+Settings
+</a>
+
+<a href="#" id="logoutBtn" class="menu">
+<i class="fas fa-right-from-bracket"></i>
+Logout
+</a>
+
+</nav>
+
+</aside>
+
+<!-- MAIN -->
+<div class="main">
+
+<header class="header">
+
+<div class="header-left">
+
+<button id="menuBtn" class="menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+
+<h2>Birthday Report</h2>
+
+</div>
+
+<div class="header-right">
+
+<i class="fas fa-cake-candles text-2xl text-red-700"></i>
+
+</div>
+
+</header>
+
+<div class="content">
+
+<!-- SEARCH -->
+<div class="card">
+
+<label>Search Birthday</label>
+
+<input
+id="birthdaySearch"
+class="input"
+placeholder="Search by name, department, level or member number">
+
+</div>
+
+<br>
+
+<!-- TODAY'S BIRTHDAY -->
+<div class="card">
+
+<h2 class="text-xl font-bold mb-4">
+Today's Birthdays 🎂
+</h2>
+
+<div id="todayBirthday">
+
+<div class="text-center py-8">
+
+Loading birthdays...
+
+</div>
+
+</div>
+
+</div>
+
+<br>
+
+<!-- UPCOMING -->
+<div class="card">
+
+<h2 class="text-xl font-bold mb-5">
+
+Upcoming Birthdays
+
+</h2>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Member No</th>
+
+<th>Name</th>
+
+<th>Birthday</th>
+
+<th>Department</th>
+
+<th>Level</th>
+
+<th>Age</th>
+
+<th>Days Left</th>
+
+</tr>
+
+</thead>
+
+<tbody id="birthdayTable">
+
+<tr>
+
+<td colspan="7" class="text-center py-10">
+
+Loading birthdays...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/config.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/sidebar.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/birthdays.js"></script>
+
+</body>
+
+</html>

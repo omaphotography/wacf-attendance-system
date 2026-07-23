@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Members | WACF Attendance System</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div id="overlay" class="overlay hidden"></div>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="sidebar">
+
+<div class="logo">
+<img src="assets/logo.jpg">
+<h2>WORD ASSEMBLY</h2>
+<p>Campus Fellowship</p>
+</div>
+
+<nav>
+
+<a href="dashboard.html" class="menu">
+<i class="fas fa-house"></i>
+Dashboard
+</a>
+
+<a href="attendance.html" class="menu">
+<i class="fas fa-calendar-check"></i>
+Attendance
+</a>
+
+<a href="members.html" class="menu active">
+<i class="fas fa-users"></i>
+Members
+</a>
+
+<a href="import.html" class="menu">
+<i class="fas fa-file-excel"></i>
+Import Excel
+</a>
+
+<a href="reports.html" class="menu">
+<i class="fas fa-chart-column"></i>
+Reports
+</a>
+
+<a href="birthdays.html" class="menu">
+<i class="fas fa-cake-candles"></i>
+Birthdays
+</a>
+
+<a href="settings.html" class="menu">
+<i class="fas fa-gear"></i>
+Settings
+</a>
+
+<a href="#" id="logoutBtn" class="menu">
+<i class="fas fa-right-from-bracket"></i>
+Logout
+</a>
+
+</nav>
+
+</aside>
+
+<!-- MAIN -->
+<div class="main">
+
+<header class="header">
+
+<div class="header-left">
+
+<button id="menuBtn" class="menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+
+<h2>Members</h2>
+
+</div>
+
+</header>
+
+<div class="content">
+
+<!-- Statistics -->
+<div class="grid grid-cols-4 gap-4 mb-6">
+
+<div class="card text-center">
+<h2 id="totalMembers">0</h2>
+<p>Total Members</p>
+</div>
+
+<div class="card text-center">
+<h2 id="maleMembers">0</h2>
+<p>Male</p>
+</div>
+
+<div class="card text-center">
+<h2 id="femaleMembers">0</h2>
+<p>Female</p>
+</div>
+
+<div class="card text-center">
+<h2 id="birthdayMonth">0</h2>
+<p>This Month</p>
+</div>
+
+</div>
+
+<!-- Toolbar -->
+<div class="card mb-6">
+
+<div class="flex justify-between items-center gap-4 flex-wrap">
+
+<input
+id="searchInput"
+class="input flex-1"
+placeholder="Search member...">
+
+<div class="flex gap-2">
+
+<button
+id="addMemberBtn"
+class="btn btn-red">
+
+<i class="fas fa-user-plus"></i>
+
+Add Member
+
+</button>
+
+<button
+id="exportBtn"
+class="btn">
+
+<i class="fas fa-file-excel"></i>
+
+Export
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Table -->
+<div class="card">
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Member No</th>
+
+<th>Name</th>
+
+<th>Department</th>
+
+<th>Level</th>
+
+<th>Phone</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="memberTable">
+
+<tr>
+
+<td colspan="6" class="text-center p-10">
+
+Loading members...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Pagination -->
+
+<div class="flex justify-between mt-5">
+
+<button id="prevPage" class="btn">
+
+Previous
+
+</button>
+
+<span id="pageInfo">
+
+Page 1
+
+</span>
+
+<button id="nextPage" class="btn">
+
+Next
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Registration Modal -->
+<div id="memberModal" class="modal hidden">
+
+<div class="modal-content">
+
+<div class="flex justify-between mb-5">
+
+<h2 id="modalTitle">
+
+Register Member
+
+</h2>
+
+<button id="closeModal">
+
+<i class="fas fa-times"></i>
+
+</button>
+
+</div>
+
+<form id="memberForm">
+
+<div class="grid-2">
+
+<input id="fullName" class="input" placeholder="Full Name" required>
+
+<input id="address" class="input" placeholder="Address">
+
+<input id="birthDay" class="input" type="number" placeholder="Birth Day">
+
+<input id="birthMonth" class="input" type="number" placeholder="Birth Month">
+
+<input id="department" class="input" placeholder="Department">
+
+<select id="level" class="input">
+
+<option value="">Level</option>
+
+<option>100</option>
+<option>200</option>
+<option>300</option>
+<option>400</option>
+<option>500</option>
+
+</select>
+
+<input id="phone1" class="input" placeholder="Phone 1" required>
+
+<input id="phone2" class="input" placeholder="Phone 2">
+
+</div>
+
+<div class="mt-5">
+
+<button
+type="submit"
+class="btn btn-red">
+
+Save Member
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script src="js/config.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/sidebar.js"></script>
+
+
+<!-- DATABASE FUNCTIONS FIRST -->
+<script src="js/app.js"></script>
+
+
+<!-- MEMBER SYSTEM -->
+<script src="js/members.js"></script>
+
+<script src="js/member-form.js"></script>
+
+<script src="js/member-actions.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!-- Member Drawer -->
+
+<div id="memberDrawer"
+class="fixed top-0 right-0 w-full sm:w-[500px] h-screen bg-white shadow-2xl translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
+
+<div style="display:flex;justify-content:space-between;align-items:center;padding:25px;border-bottom:1px solid #eee;">
+
+<h2 style="font-size:24px;font-weight:700;">
+
+Register Member
+
+</h2>
+
+<button
+id="closeDrawer"
+style="width:40px;height:40px;border:none;background:none;border-radius:50%;cursor:pointer;">
+
+<i class="fas fa-times"></i>
+
+</button>
+
+</div>
+
+<form id="memberForm" class="content">
+
+<div style="margin-bottom:20px;">
+
+<label>
+
+Full Name <span style="color:red;">*</span>
+
+</label>
+
+<input
+id="full_name"
+type="text"
+class="input"
+required>
+
+</div>
+
+<div style="margin-bottom:20px;">
+
+<label>
+
+Date of Birth (Optional)
+
+</label>
+
+<div class="grid-3">
+
+<select id="birth_day" class="input">
+
+<option value="">Day</option>
+
+</select>
+
+<select id="birth_month" class="input">
+
+<option value="">Month</option>
+
+<option value="1">January</option>
+<option value="2">February</option>
+<option value="3">March</option>
+<option value="4">April</option>
+<option value="5">May</option>
+<option value="6">June</option>
+<option value="7">July</option>
+<option value="8">August</option>
+<option value="9">September</option>
+<option value="10">October</option>
+<option value="11">November</option>
+<option value="12">December</option>
+
+</select>
+
+<input
+id="birth_year"
+type="number"
+placeholder="Year"
+class="input">
+
+</div>
+
+</div>
+
+<div style="margin-bottom:20px;">
+
+<label>
+
+Address
+
+</label>
+
+<textarea
+id="address"
+rows="3"
+class="input"
+style="resize:none;"></textarea>
+
+</div>
+
+<div style="margin-bottom:20px;">
+
+<label>
+
+Department
+
+</label>
+
+<select
+id="department"
+class="input">
+
+</select>
+
+</div>
+
+<div style="margin-bottom:20px;">
+
+<label>
+
+Level
+
+</label>
+
+<select
+id="level"
+class="input">
+
+</select>
+
+</div>
+
+<div style="margin-bottom:20px;">
+
+<label>
+
+Phone Number 1 <span style="color:red;">*</span>
+
+</label>
+
+<input
+id="phone1"
+type="text"
+class="input"
+required>
+
+</div>
+
+<div style="margin-bottom:20px;">
+
+<label>
+
+Phone Number 2 (Optional)
+
+</label>
+
+<input
+id="phone2"
+type="text"
+class="input">
+
+</div>
+
+<button
+type="submit"
+class="btn btn-red"
+style="width:100%;">
+
+<i class="fas fa-floppy-disk"></i>
+
+Save Member
+
+</button>
+
+</form>
+
+</div>
